@@ -33,3 +33,8 @@ data.titie.forEach(function (item) {
 list.forEach(function (file) {
   file.innerHTML = dls;
 });
+axios.get("/api").then(function (res) {
+  if (res.data.code == 0) {
+    alert(res.data.msg);
+  }
+});

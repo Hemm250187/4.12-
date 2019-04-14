@@ -25,3 +25,9 @@ data.titie.forEach(item => {
 list.forEach(file => {
     file.innerHTML = dls
 })
+
+axios.get("/api").then(res => {
+    if (res.data.code == 0) {
+        alert(res.data.msg)
+    }
+})

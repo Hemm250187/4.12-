@@ -7,6 +7,10 @@ const uglify = require("gulp-uglify");
 const babel = require("gulp-babel");
 const webserver = require("gulp-webserver");
 
+const url = require("url");
+const { readFileSync } = require("fs");
+const { join } = require("path")
+
 // 开发 css
 gulp.task("devcss", () => {
     return gulp.src("./src/scss/**/*.scss")
@@ -30,6 +34,18 @@ gulp.task("server", () => {
         .pipe(webserver({
             port: 1245,
             livereload: true,
+            middleware(req, res, next) {
+                let { pathname, query } = url.parse(req.url, true)
+                if (pathname === "/favicon.ico") {
+                    return res.end("")
+                }
+                pathname = pathname === "/" ? "index.html" : pathname;
+                if (pathname == "/api") {
+                    res.end(JSON.stringify({ code: 0, msg: "888666" }))
+                } else {
+                    res.end(readFileSync(join(__dirname, "src", pathname)))
+                }
+            }
         }))
 })
 gulp.task("watch", () => {
