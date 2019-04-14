@@ -7,7 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="../fonts/iconfont.css">
+    <link rel="stylesheet" href="./fonts/iconfont.css">
+    <link rel="stylesheet" href="./swiper/swiper.css">
 </head>
 
 <body>
@@ -25,13 +26,52 @@
                 </dl>
             </div>
         </header>
-        <section></section>
+        <section>
+            <div class="topimg">
+                <!-- <img src="images/11942.jpg" alt=""> -->
+                <div class="swiper-container banner">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="images/11942.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/082.jpeg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/080.jpeg" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="font">
+                    <p style="font-weight: bold">吃喝玩乐全都有</p>
+                    <p class="app">
+                        <span>打开美团APP</span>
+                        <span>下载美团APP</span>
+                    </p>
+                </div>
+            </div>
+            <div class="list swiper-container">
+                <div class="swiper-wrapper list1">
+                    <div class="swiper-slide list2">
+                    </div>
+                    <div class="swiper-slide list2">
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+
+            </div>
+
+        </section>
         <footer></footer>
     </div>
 
 </body>
+<script src="swiper/swiper.js"></script>
 <script src="js/flexible.js"></script>
 <script src="js/axios.js"></script>
+<script src="js/mock.js"></script>
 <script src="js/index.js"></script>
+
 
 </html>
